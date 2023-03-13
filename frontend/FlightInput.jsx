@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, TextInput, TouchableOpacity, Text } from 'react-native';
+import { pushToFirebase } from './pushToFirebase';
 
 export default function FlightInput() {
   const [flightNumber, setFlightNumber] = useState('');
 
   const handleSubmit = () => {
     console.log(`Submitted flight number: ${flightNumber}`);
-    // Do something with the flight number here, such as pass it to a parent component
+    pushToFirebase(flightNumber);
   };
 
   return (

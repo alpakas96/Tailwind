@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import FlightInput from './FlightInput';
-import { startFirebase } from './startFirebase';
+import { startFirebase, database } from './startFirebase';
 
 export default function App() {
-  startFirebase;
+  database;
   return (
     <View style={styles.container}>
       <FlightInput />
@@ -21,4 +21,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
 

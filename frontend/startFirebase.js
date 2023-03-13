@@ -13,7 +13,6 @@ const firebaseConfig = {
 };
 
 const startFirebase = initializeApp(firebaseConfig);
-
 const database = getDatabase(startFirebase);
 
 export { startFirebase, database };
