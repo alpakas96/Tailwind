@@ -1,5 +1,5 @@
-
 import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
 import { API_KEY, AUTH_DOMAIN, PROJECT_ID, STORAGE_BUCKET, MESSAGING_SENDER_ID, APP_ID, MEASUREMENT_ID } from "@env";
 
 const firebaseConfig = {
@@ -12,4 +12,8 @@ const firebaseConfig = {
     measurementId: MEASUREMENT_ID
 };
 
-export const startFirebase = initializeApp(firebaseConfig);
+const startFirebase = initializeApp(firebaseConfig);
+
+const database = getDatabase(startFirebase);
+
+export { startFirebase, database };
