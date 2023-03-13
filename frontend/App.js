@@ -1,12 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import FlightInput from './FlightInput';
 import { startFirebase } from './startFirebase';
 
 export default function App() {
   startFirebase;
   return (
     <View style={styles.container}>
-      <Text> </Text>
+      <FlightInput />
       <StatusBar style="auto" />
     </View>
   );
@@ -15,7 +16,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'creme',
     alignItems: 'center',
     justifyContent: 'center',
   },
