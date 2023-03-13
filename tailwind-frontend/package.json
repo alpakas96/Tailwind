@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "expo-dotenv": "^0.1.0"
+  }
+}
