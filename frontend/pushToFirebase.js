@@ -1,4 +1,4 @@
-import { database } from "./startFirebase";
+import "firebase/database";
 
 async function pushToFirebase(flightNumber, database) {
     try {

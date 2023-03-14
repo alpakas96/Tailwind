@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, TextInput, TouchableOpacity, Text } from 'react-native';
 import { pushToFirebase } from './pushToFirebase';
+import globalContext from './App.js';
 
 export default function FlightInput() {
   const [flightNumber, setFlightNumber] = useState('');
 
   const handleSubmit = () => {
     console.log(`Submitted flight number: ${flightNumber}`);
-    pushToFirebase(flightNumber);
+    const database = globalContext.database;
+    pushToFirebase(flightNumber, database);
   };
 
   return (
