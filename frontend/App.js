@@ -4,7 +4,8 @@ import FlightInput from './FlightInput';
 import { startFirebase, database } from './startFirebase';
 
 export default function App() {
-  database;
+  startFirebase();
+  // database;
   return (
     <View style={styles.container}>
       <FlightInput />
