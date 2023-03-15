@@ -1,20 +1,10 @@
-import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
-import { REACT_APP_API_KEY, REACT_APP_AUTH_DOMAIN, REACT_APP_PROJECT_ID, REACT_APP_STORAGE_BUCKET, REACT_APP_MESSAGING_SENDER_ID, REACT_APP_APP_ID, REACT_APP_MEASUREMENT_ID } from '@env';
+import { initializeApp } from 'firebase/app';
+import { getDatabase } from 'firebase/database'; // Add this line
+import appConfig from './app.json';
 
-require('react-native-dotenv').config();
+const firebaseConfig = appConfig.expo.extra.firebaseConfig;
 
-export default function startFirebase() {
-    const firebaseConfig = {
-        apiKey: REACT_APP_API_KEY,
-        authDomain: REACT_APP_AUTH_DOMAIN,
-        projectId: REACT_APP_PROJECT_ID,  
-        storageBucket: REACT_APP_STORAGE_BUCKET,
-        messagingSenderId: REACT_APP_MESSAGING_SENDER_ID,
-        appId: REACT_APP_APP_ID,
-        measurementId: REACT_APP_MEASUREMENT_ID
-        
-    };
-    const database = getDatabase(initializeApp(firebaseConfig));
-    return database;
-}
+const startFirebase = initializeApp(firebaseConfig);
+
+export const database = getDatabase(startFirebase); // Export the database instance
+export default startFirebase;

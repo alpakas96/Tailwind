@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { StyleSheet, View, TextInput, TouchableOpacity, Text } from 'react-native';
-import { pushToFirebase } from './pushToFirebase';
-import globalContext from './App.js';
+// Import pushToFirebase using require method
+const { pushToFirebase } = require('./pushToFirebase');
+import GlobalState from './GlobalState';
 
 export default function FlightInput() {
   const [flightNumber, setFlightNumber] = useState('');
 
+  // Access the database value from GlobalState
+  const { database } = useContext(GlobalState);
+
   const handleSubmit = () => {
     console.log(`Submitted flight number: ${flightNumber}`);
-    const database = globalContext.database;
+    console.log("Database object in FlightInput:", database); // Add this line
     pushToFirebase(flightNumber, database);
   };
 

@@ -1,19 +1,13 @@
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import FlightInput from './FlightInput';
-import { startFirebase } from './startFirebase';
-import { useState } from 'react';
-
-// this is the global state
-export const GlobalState = React.createContext(null);
+import startFirebase, { database } from './startFirebase'; // Import the database instance
+import GlobalState from './GlobalState';
 
 export default function App() {
-  
-  // this returns the database object
-  const [database , setDatabase] = useState(startFirebase());
-
   return (
-    <GlobalState.Provider value={database}>
+    <GlobalState.Provider value={{ database }}>
       <View style={styles.container}>
         <FlightInput />
         <StatusBar style="auto" />
@@ -25,10 +19,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'creme',
+    backgroundColor: 'cream',
     alignItems: 'center',
     justifyContent: 'center',
   },
 });
-
-

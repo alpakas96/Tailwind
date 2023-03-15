@@ -11,6 +11,18 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "extra": {
+      "firebaseConfig": {
+        "apiKey": "AIzaSyBxj9RGJJFVaooe_tUqEwKwsdD9Jfa-UK8",
+        "authDomain": "tailwind-e2b0d.firebaseapp.com",
+        "databaseURL": "https://tailwind-e2b0d.firebaseio.com",
+        "projectId": "tailwind-e2b0d",
+        "storageBucket": "tailwind-e2b0d.appspot.com",
+        "messagingSenderId": "532682045951",
+        "appId": "1:532682045951:web:c5083b1364e8b3bf1d0fca",
+        "measurementId": "G-3KMTFG2YBD"
+      }
+    },
     "assetBundlePatterns": [
       "**/*"
     ],
